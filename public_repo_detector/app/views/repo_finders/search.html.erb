@@ -1,0 +1,17 @@
+
+
+<%= form_tag repo_finders_search_path, method: 'get' do %>
+	<label>Public Repository:</label>
+	<input type='text' name='search' >
+	<button>search</button>
+<% end %>
+
+<h2> Repository results</h2>
+<%= paginate @public_repos %><br/>
+<% @public_repos&.each do |public_repo|%>
+	<a href=<%=public_repo['html_url']%> target="_blank" class='v-align-middle'><%=public_repo['full_name']%></a>
+	<br/>
+	<p><%= public_repo['description']%></p>
+	<p> <%= public_repo['language']%>&ensp; Updated on,&nbsp;<%=format_date(public_repo['updated_at'])%></p>
+	<br/><br/>
+<%end%>
