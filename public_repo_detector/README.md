@@ -29,3 +29,7 @@
 
 *   	rails s
 	 And now you can visit the site with the URL http://localhost:3000
+	
+6. To run the rspec test
+
+*		  bundle exec rspec
